@@ -1,1 +1,365 @@
+--CREATE TABLE EmployeeDemorgraphics
+--(EmployeeID int,
+--FirstName varchar(50),
+--LastName varchar(50),
+--Age int,
+--Gender varchar(50))
 
+--CREATE TABLE EmployeeSalary
+--(EmployeeID int,
+--JobTitle varchar(50),
+--Salary int)
+
+--CREATE TABLE WarehouseDemographics (
+--LocationID int, -- Assuming a location mapping exists
+--WarehouseSite varchar(50),
+ --Region varchar(50),
+  --Country varchar(50),
+  --HR_ERP varchar(50)
+--);
+
+--Drop table WarehouseDemographics;
+
+--INSERT INTO EmployeeDemorgraphics VALUES 
+--(1008, 'John', 'Halbert', 30, 'Male' )
+(--1009, 'Pam', 'Basley', 30, 'Female' ),
+--(1010, 'Dwight', 'Schrute', 29, 'Male'),
+--(1011, 'Angela', 'Martin', 31, 'Female'),
+--(1012, 'Toby', 'Feldecine', 32, 'Male'),
+--(1013, 'Michael',  'Scott', 35, 'Male'),
+--(1014, 'Meredith', 'Lawn', 32, 'Female'),
+--(1015, 'Stanley', 'Huntson', 38, 'Male'),
+--(1016, 'Kevin', 'Maloneey', 31, 'Male')
+
+
+	--INSERT INTO EmployeeSalary VALUES
+	--(1009, 'Receptionist', 36000),
+	--(1010, 'Salesman', 63000),
+	--(1011, 'Accountant', 47000),
+	--(1012, 'HR', 50000),
+	--(1013, 'Regional Manager', 65000),
+	--(1014, 'Supplier Relations', 41000),
+	--(1015, 'Salemans', 41000),
+	--(1016, 'Accountant', 42000)
+
+
+
+	--INSERT INTO WarehouseDemographics VALUES
+	--(101,'Chicago', 'Midwest', 'USA', 'HR_ERP'),
+	--(102,'Dallas', 'South', 'USA', 'HR_ERP'),
+	--(103,'Toronto', 'East', 'Canada', 'HR_ERP'),
+	--(104,'Guadalajara', 'West', 'Mexico', 'HR_ERP'),
+	--(105,'Chicago', 'Midwest', 'USA', 'HR_ERP_LEGACY'),
+	--(106,'Dallas', 'South', 'USA', 'HR_ERP_LEGACY'),
+	--(107,'Toronto', 'East', 'Canada', 'HR_ERP_V2'),
+	--(108,'Chicago', 'Midwest', 'USA', 'HR_ERP_V2')
+
+
+
+	--SELECT  * FROM EmployeeDemorgraphics
+
+	--SELECT TOP 5 * FROM EmployeeDemorgraphics
+
+	--SELECT DISTINCT(EmployeeID) FROM EmployeeDemorgraphics
+
+	--SELECT COUNT(LastName) AS COUNT_LASTNAME FROM EmployeeDemorgraphics
+
+	--SELECT MAX(Salary) AS MAX_SALARY FROM EmployeeSalary
+
+	--SELECT MIN(Salary) AS MIN_SALARY FROM EmployeeSalary
+
+
+	--SELECT AVG(Salary) AS AVG_SALARRY FROM EmployeeSalary
+
+
+	--SELECTING DATA FROM A TABLE IF YOU ARE IN THE MASTER TABLE
+
+	--SELECT * FROM SQLTutorial.dbo.EmployeeSalary
+
+
+	--SELECT * FROM EmployeeDemorgraphics
+	--WHERE FirstName = 'John'
+
+	--SELECT * FROM EmployeeDemorgraphics
+	--WHERE FirstName <> 'John'
+
+	--SELECT * FROM EmployeeDemorgraphics
+	--WHERE Age <= 32 AND Gender = 'Male'
+
+	--SELECT * FROM EmployeeDemorgraphics
+	--WHERE Age <= 32 OR Gender = 'Male'
+
+	--SELECT * FROM EmployeeDemorgraphics
+	--WHERE LastName LIKE 'S%c%ott%'
+
+	--SELECT * FROM EmployeeDemorgraphics
+	--WHERE FirstName IS NULL
+
+	--SELECT * FROM EmployeeDemorgraphics
+	--WHERE FirstName IS  NOT NULL
+
+	--SELECT * FROM EmployeeDemorgraphics
+	--WHERE FirstName IN ('John', 'Michael')
+
+	--SELECT Gender, COUNT(Gender) FROM EmployeeDemorgraphics
+	--GROUP BY Gender
+
+	--SELECT Gender, Age, COUNT(Gender) FROM EmployeeDemorgraphics
+	--GROUP BY Gender, Age
+
+	--SELECT Gender, COUNT(Gender) AS CountGender FROM EmployeeDemorgraphics
+	--WHERE AGE > 31
+	--GROUP BY Gender
+	--ORDER BY Gender
+
+	--SELECT Gender, Age FROM EmployeeDemorgraphics
+	--ORDER BY Age DESC, Gender DESC
+
+	--SELECT * FROM EmployeeDemorgraphics
+	--ORDER BY 4 DESC, 5 DESC
+
+	
+	
+	--//INTERMEDIATE//--
+
+	--SELECT * FROM EmployeeDemorgraphics
+	--Inner Join EmployeeSalary
+	--ON EmployeeDemorgraphics.EmployeeID = EmployeeSalary.EmployeeID
+
+
+
+
+--	SELECT * FROM EmployeeDemorgraphics full Join EmployeeSalary
+---	ON EmployeeDemorgraphics.EmployeeID = EmployeeSalary.EmployeeID
+
+
+
+	--SELECT * FROM EmployeeDemorgraphic Full Outer Join EmployeeSalary
+	--ON EmployeeDemorgraphics.EmployeeID = EmployeeSalary.EmployeeID
+
+
+
+
+	--SELECT * FROM EmployeeDemorgraphics Right	Outer Join EmployeeSalary
+	--ON EmployeeDemorgraphics.EmployeeID = EmployeeSalary.EmployeeID
+
+
+
+	--SELECT * FROM EmployeeDemorgraphics Right	Outer Join EmployeeSalary
+	--ON EmployeeDemorgraphics.EmployeeID = EmployeeSalary.EmployeeID
+
+	
+	--SELECT EmployeeID, FirstName, Age FROM EmployeeDemographics
+	--Outer Join EmployeeSalary
+	--ON EmployeeDemorgraphics.EmployeeID = EmployeeSalary.EmployeeID
+
+
+	--SELECT EmployeeID, FirstName, Age FROM EmployeeDemorgraphics 
+	--UNION
+	--SELECT EmployeeID, JobTitle, Salary FROM EmployeeSalary
+
+	-- case statements allows to specify a condition and return the condition
+
+	--SELECT FirstName, LastName, Age,
+	--CASE
+	--	WHEN Age > 30 Then 'old'
+	--	ELSE 'Young'
+	--END
+	--FROM EmployeeDemorgraphics
+	--WHERE Age is NOT NULL
+	--ORDER BY Age
+
+
+	--SELECT FirstName, LastName, JobTitle, Salary,
+	--CASE
+	--	WHEN JobTitle = 'Salesman' THEN Salary + (Salary * .10)
+	--	WHEN JobTitle = 'Accountant' THEN Salary + (Salary * .05) 
+	--	WHEN JobTitle = 'HR' THEN Salary + (Salary * .000001)
+	--	ELSE Salary + (Salary * .03)
+	--END AS SalaryAfterRaise
+	--FROM EmployeeDemorgraphics
+	--JOIN EmployeeSalary
+	--	ON EmployeeDemorgraphics.EmployeeID = EmployeeSalary.EmployeeID
+
+
+	--HAVING OCCURS AFTER A GROUP BY STATEMENT
+
+
+	--SELECT * FROM EmployeeDemorgraphics
+
+	--UPDATE EmployeeDemorgraphics
+	--SET EmployeeID = 1012
+	--WHERE FirstName = 'Pam' AND LastName = 'Basley'
+
+	-- OR 
+
+	--SELECT * FROM EmployeeDemorgraphics
+
+	--UPDATE EmployeeDemorgraphics
+	--SET Age = 31, Gender = 'Female'
+	--WHERE FirstName = 'Pam' AND LastName = 'Basley'
+
+
+	---BEFORE DELETING SELECT THE SPECIFIC ROWS 
+	--DELETE FROM EmployeeDemorgraphics
+	--WHERE FirstName = 'Pam' AND LastName = 'Basley'
+
+
+	---ALIASING IS BASICALLLY THE CHANGING OF THE NAME OF MY COLUMNS OR Tables
+	
+	--SELECT FirstName + ' ' + LastName AS FullName FROM EmployeeDemorgraphics
+
+	--SELECT Demo.EmployeeID, Demo.FirstName, Demo.LastName, Sal.JobTitle, Ware.Age
+	--FROM EmployeeDemorgraphics Demo
+	--LEFT JOIN EmployeeSalary Sal
+	--ON Demo.EmployeeID = Sal.EmployeeID
+	--LEFT JOIN WarehouseEmployeeDemorgraphics Ware
+	--ON Demo.EmployeeID = Ware.EmployeeID
+
+
+
+	--PARTITION BY is often comparted to mthe group by statement which is used to reduce the number of rows return in our output but PARTITION BY DIVIDES THE RESULTS INTO PARTITIONS AND DOES NOT REDUCE THE NUMBER OF ROWS RETURN
+
+	--SELECT FirstName, LastName, Gender, Salary, 
+	--Count(Gender) OVER (PARTITION BY Gender) as TotalGender
+	--FROM EmployeeDemorgraphics dem
+	--JOIN EmployeeSalary sal
+	--ON dem.EmployeeID = sal.EmployeeID
+
+	--Difference---
+
+	--SELECT FirstName, LastName, Gender, Salary, COUNT(Gender)
+	--FROM EmployeeDemorgraphics dem
+	--JOIN EmployeeSalary sal
+	--ON dem.EmployeeID = sal.EmployeeID
+	--GROUP BY Gender
+
+
+
+
+	--CTEs - cte is a common table expression used to manipulate the complex subquery data now it only exiast in the scope of the run and it is onlly contained in the memory
+
+	--WITH CTE_Employee as
+	--(SELECT FirstName, LastName, Gender, Salary,
+	-- COUNT(gender) OVER (PARTITION by Gender) as TotalGender,
+	--  AVG(salary) OVER (PARTITION BY Gender) as AvgSalary
+	--  FROM EmployeeDemorgraphics emp
+	--  JOIN EmployeeSalary sal
+	--  ON emp.EmployeeID = sal.EmployeeID
+	--  WHERE Salary > '45000')
+
+	--Select FirstName, AvgSalary
+	--FROM CTE_Employee
+
+
+
+	--TEMP TABLES WE CREATE IT THE SAME WAY BUT SLIGHTLY DIFFERENT, WHY WE USE TEMP TABLES IS BECAUSE IF WE HAVE A TABLE WITH A BILLION ROWS WE INSERT THE VALUES INTO THE TEMP TABLE FOR MANIPULATION PREVVENTING ACCIDENTAL DELETION
+
+	--CREATE TABLE #temp_Employee (
+	--EmployeeID int, 
+	--JobTitle varchar(100),
+	--Salary int
+	--)
+
+	--Select * FROM #temp_Employee
+
+	--INSERT INTO #temp_Employee VALUES
+	--('1001', 'HR', 45000)
+
+
+	----OR --
+
+	--INSERT INTO #temp_Employee
+	--SELECT * FROM EmployeeSalary
+
+
+	---STRING FUNCTIONS LOOK IT UP - TRIM, LTRIM, RTRIM, Replace, Substring, Upper, Lower
+
+	--TRIM(EmployeeID) as IDTRIM
+
+
+	--LTRIM(EmployeeID) as IDLTRIM
+
+	--RTRIM(EmployeeID) as IDRTRIM
+
+	--Replace(LastName, '- Fired', '') as LastNameFixed
+
+	--Substring(FirstName, 2, 5)
+
+
+	---STORE PROCEDURES ARE USED TO SAVE IMPORTANT TABLES
+
+	--CREATE PROCEDURE Temp_Employee
+	--AS
+	--CREATE TABLE #temp_Employee (
+	--EmployeeID int, 
+	--JobTitle varchar(100),
+	--Salary int
+	--)
+
+	
+
+	--EXEC Temp_Employee
+
+
+	--ALTER PROCEDURE Temp_Employee
+	--@JobTitle nvarcahr(100)
+	--AS
+	--CREATE TABLE #temp_Employee (
+	--EmployeeID int, 
+	--JobTitle varchar(100),
+	--Salary int
+	--)
+
+	
+
+	--Insert into #temp_Employee
+	--SELECT JobTitle, Count(JobTitle), Avg(Age), AVG(salary
+	--FROM EmployeeDemorgraphics emp
+	--JOIN EmployeeSalary sal
+	--ON emp.EmployeeID = sal.EmployeeID
+	--WHERE JobTitle = @JobTitle
+	--GROUP BY JobTitle
+
+
+	----EXEC Temp_Employee @JobTitle = 'Salesman'
+
+
+
+
+
+
+	--SUBQUERIES ---
+
+
+	--USING THEM IN SELECT
+
+	--SELECT EmployeeID, Salary, (SELECT AVG(Salary) FROM EmployeeSalary) AS ALLAvgSalary
+	--FROM EmployeeSalary
+
+
+	--USING IT WITH PARTITION  BY
+
+	--SELECT EmployeeID, Salary, AVG(Salary) OVER AS ALLAvgSalary
+	--FROM EmployeeSalary
+
+
+	--WHY GROUP BY DOES NOT WORK FOR IT--
+
+
+
+	--SUBQUERY IN THE FROM STATEMENT, SUBQUERIES TEND TO BECOME SLOW BUT USE IT, but a temp table is better  
+
+
+	--SELECT a.EmployeeID, AllAvgSalary 
+	--FROM (SELECT EmployeeID, Salary, AVG(Salary) over () as AllAvgSalary
+	--FROM EmployeeSalary) a
+
+
+
+	-- SUBQUERY IN WHERE - IN A SUBQUERY WHERE ONLY ONE COLUMN CAN BE SELECTED
+
+	--SELECT EmployeeID, JobTitle, Salary
+	--FROM EmployeeSalary
+	--WHERE EmployeeID in (Select EmployeeID FROM EmployeeDemorgraphics
+	--WHERE Age > 30)
